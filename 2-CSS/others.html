@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 3px solid black;
+        padding: 10px;
+        background-color: skyblue;
+      }
+
+      .thanks {
+        display: none;
+      }
+
+      @media screen and (max-width: 1000px) {
+        .box {
+          background-color: orange;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .box {
+          background-color: pink;
+        }
+      }
+
+      @media print {
+        .box {
+          font-size: 40px;
+          font-family: sans-serif;
+        }
+
+        .thanks {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsum nihil
+      rerum, maiores quibusdam sapiente explicabo. Ducimus exercitationem
+      nostrum, blanditiis, at unde id dignissimos nobis facilis, quas sequi
+      assumenda suscipit!
+    </div>
+
+    <p class="thanks">ကျေးဇူးတင်ပါသည်</p>
+  </body>
+</html>

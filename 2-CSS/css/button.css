@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.btn {
+  color: white;
+  background-color: #000000;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  border: 3px solid #000000;
+  border-radius: 7px;
+}
+
+.btn:hover {
+  border-color: grey;
+}
+
+.btn-outline {
+  color: #000000;
+  background-color: transparent;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  border: 3px solid #000000;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+
+.btn-outline:hover {
+  color: white;
+  background-color: #000000;
+}
+
+.btn-icon {
+  color: white;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  /* padding: 10px 20px; */
+  border: 3px solid #000000;
+  border-radius: 7px;
+}
+
+.rounded {
+  border-radius: 25px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.btn-primary {
+  background-color: #5fa8d3;
+  color: white;
+  border-color: #5fa8d3;
+}
+
+.btn-success {
+  background-color: #38a3a5;
+  color: white;
+  border-color: #38a3a5;
+}
+
+.btn-danger {
+  background-color: #ff8fab;
+  color: white;
+  border-color: #ff8fab;
+}
+
+.btn-outline-primary {
+  border-color: #5fa8d3;
+  color: #5fa8d3;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5fa8d3;
+  color: white;
+}
+
+.btn-outline-success {
+  border-color: #38a3a5;
+  color: #38a3a5;
+}
+
+.btn-outline-success:hover {
+  background-color: #38a3a5;
+  color: white;
+}
+
+.btn-outline-danger {
+  border-color: #ff8fab;
+  color: #ff8fab;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff8fab;
+  color: white;
+}
