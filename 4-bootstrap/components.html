@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      .slide-img {
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+      }
+    </style>
+  </head>
+  <body class="p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="alert alert-danger">
+            <i class="fa-solid fa-home"></i>
+            Hello San Kyi tar
+          </div>
+          <div class="alert alert-success alert-dismissible fade show">
+            Hello San Kyi tar
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+          <div class="alert alert-dismissible alert-primary">
+            Hello San Kyi tar
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary">Click Me</button>
+          <button class="btn btn-outline-primary">Click Me</button>
+          <a href="https://google.com" class="btn btn-info">Google Web</a>
+          <a href="https://google.com" class="btn btn-outline-info"
+            >Google Web</a
+          >
+          <br /><br />
+
+          <button class="btn btn-sm btn-primary">Small</button>
+          <button class="btn btn-primary">Medium</button>
+          <button class="btn btn-lg btn-primary">Large</button>
+
+          <button class="btn btn-sm btn-outline-primary">Small</button>
+          <button class="btn btn-outline-primary">Medium</button>
+          <button class="btn btn-lg btn-outline-primary">Large</button>
+
+          <br />
+          <br />
+
+          <button class="btn btn-secondary" disabled>Hello Btn</button>
+
+          <a href="https://youtube.com" class="btn btn-danger disabled"
+            >YouTube</a
+          >
+
+          <br />
+          <br />
+
+          <button class="btn btn-primary">Click Me</button>
+          <button class="btn btn-primary active">Click Me</button>
+          <button class="btn btn-primary">Click Me</button>
+          <br />
+          <br />
+          <button class="btn btn-outline-primary">Click Me</button>
+          <button class="btn btn-outline-primary active">Click Me</button>
+          <button class="btn btn-outline-primary">Click Me</button>
+
+          <br /><br />
+
+          <div class="btn-group">
+            <button class="btn btn-primary">Click Me</button>
+            <button class="btn btn-primary active">Click Me</button>
+            <button class="btn btn-primary">Click Me</button>
+          </div>
+          <br /><br />
+
+          <div class="btn-group">
+            <button class="btn btn-outline-primary">Click Me</button>
+            <button class="btn btn-outline-primary active">Click Me</button>
+            <button class="btn btn-outline-primary">Click Me</button>
+          </div>
+
+          <br /><br />
+          <h1>
+            Example heading
+            <span class="badge bg-secondary">New</span>
+          </h1>
+          <p>
+            Example heading
+            <span class="badge bg-primary">New</span>
+          </p>
+
+          <br /><br />
+
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Library</a></li>
+              <li class="breadcrumb-item"><a href="#">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+          </nav>
+
+          <br /><br />
+
+          <h4>Bootstrap List</h4>
+          <ul class="list-group">
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item active">Apple</li>
+            <li class="list-group-item">Apple</li>
+          </ul>
+
+          <br />
+          <br />
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item">Apple</li>
+          </ul>
+
+          <br />
+          <br />
+          <h4>Clickable List</h4>
+
+          <div class="list-group">
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://mms-it.com"
+              >Google</a
+            >
+            <a
+              class="list-group-item list-group-item-action active"
+              href="https://mms-it.com"
+              >YouTube</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://mms-it.com"
+              >Facebook</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              href="https://mms-it.com"
+              >Instagram</a
+            >
+          </div>
+
+          <br />
+          <br />
+
+          <h4>Progress</h4>
+
+          <div class="progress mb-3">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+              style="width: 74%"
+            >
+              74%
+            </div>
+          </div>
+
+          <div class="progress mb-3">
+            <div class="progress-bar bg-info" style="width: 24%">24%</div>
+          </div>
+
+          <div class="progress mb-3">
+            <div
+              class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
+              style="width: 51%"
+            ></div>
+          </div>
+
+          <div class="progress mb-3" style="height: 10px">
+            <div
+              class="progress-bar bg-secondary progress-bar-striped progress-bar-animated"
+              style="width: 100%"
+            ></div>
+          </div>
+
+          <br />
+          <br />
+
+          <h4>Spinner</h4>
+
+          <div class="spinner-border"></div>
+          <div class="spinner-border-sm spinner-border"></div>
+          <div class="spinner-border"></div>
+          <div class="spinner-grow-sm spinner-grow"></div>
+
+          <br />
+          <br />
+
+          <button class="btn btn-primary">
+            <div class="spinner-border-sm spinner-border"></div>
+            Loading
+          </button>
+
+          <br />
+          <br />
+
+          <div class="spinner-border text-danger"></div>
+          <div class="spinner-border text-secondary"></div>
+          <div class="spinner-border text-primary"></div>
+          <div class="spinner-border"></div>
+
+          <div class="spinner-grow text-danger"></div>
+          <div class="spinner-grow text-secondary"></div>
+          <div class="spinner-grow text-primary"></div>
+          <div class="spinner-grow"></div>
+
+          <br />
+          <br />
+
+          <div
+            class="spinner-border text-danger"
+            style="width: 100px; height: 100px"
+          ></div>
+
+          <br /><br />
+
+          <h4>Modal</h4>
+
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#myBox"
+          >
+            Launch demo modal
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            data-bs-backdrop="static"
+            id="myBox"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    My Name is Hein Htet Zan
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt! v
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Architecto ducimus, quo, deleniti inventore corporis incidunt
+                  ab voluptate maiores earum similique quas placeat aperiam
+                  aliquid debitis animi minima odio. Consequuntur, incidunt! ab
+                  voluptate maiores earum similique quas placeat aperiam aliquid
+                  debitis animi minima odio. Consequuntur, incidunt!
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br /><br />
+
+          <h4>offcanvas</h4>
+
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#aa"
+            aria-controls="offcanvasExample"
+          >
+            Button with data-bs-target
+          </button>
+
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            id="aa"
+            aria-labelledby="offcanvasExampleLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                My offcanvas
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                Some text as placeholder. In real life you can have the elements
+                you have chosen. Like, text, images, lists, etc.
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a
+                  class="list-group-item list-group-item-action"
+                  href="https://mms-it.com"
+                  >Google</a
+                >
+                <a
+                  class="list-group-item list-group-item-action active"
+                  href="https://mms-it.com"
+                  >YouTube</a
+                >
+                <a
+                  class="list-group-item list-group-item-action"
+                  href="https://mms-it.com"
+                  >Facebook</a
+                >
+                <a
+                  class="list-group-item list-group-item-action"
+                  href="https://mms-it.com"
+                  >Instagram</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <br /><br />
+
+          <h4>pagination</h4>
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link active" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+
+          <br /><br />
+
+          <h4>Slide Show</h4>
+
+          <div id="slideOne" class="carousel slide carousel-fade">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#slideOne"
+                data-bs-slide-to="0"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slideOne"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slideOne"
+                class="active"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slideOne"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#slideOne"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="./img/one.jpg"
+                  class="d-block w-100 slide-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/two.jpg"
+                  class="d-block w-100 slide-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item active">
+                <img
+                  src="./img/three.jpeg"
+                  class="d-block w-100 slide-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/four.jpg"
+                  class="d-block w-100 slide-img"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/five.jpeg"
+                  class="d-block w-100 slide-img"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#slideOne"
+              data-bs-slide="prev"
+            >
+              <i class="fa-solid fa-angle-left"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#slideOne"
+              data-bs-slide="next"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+          </div>
+
+          <button
+            data-bs-target="#slideOne"
+            data-bs-slide="next"
+            class="btn btn-primary mt-1"
+          >
+            Next
+          </button>
+
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+      </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
