@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        padding: 50px;
+      }
+      .one {
+        color: white;
+        background-color: orangered;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: right;
+        position: relative;
+      }
+
+      .one::before {
+      }
+
+      .one::after {
+        content: "";
+        display: inline-block;
+        border: 15px solid transparent;
+        position: absolute;
+        bottom: -30px;
+        right: 30px;
+        border-top-color: orangered;
+        border-right-color: orangered;
+      }
+
+      /* .triangle {
+        display: inline-block;
+        border: 50px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: red;
+        border-left-width: 200px;
+        border-right-width: 0px;
+      } */
+
+      .card {
+        position: relative;
+      }
+
+      img {
+        width: 300px;
+      }
+
+      .img-label {
+        background-color: rgb(209 16 119);
+        color: white;
+        padding: 20px 30px;
+        position: absolute;
+        left: -10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.515);
+      }
+      .img-label::after {
+        content: "";
+        border: 5px solid transparent;
+        border-top-color: rgb(162, 11, 91);
+        border-right-color: rgb(162, 11, 91);
+        display: inline-block;
+        bottom: -10px;
+        left: 0;
+        position: absolute;
+      }
+
+      .top-right {
+        /* width: 100px;
+        height: 100px; */
+        border: 80px solid transparent;
+        border-top-color: orange;
+        border-right-color: orange;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+
+      .user-icon {
+        position: fixed;
+        font-size: 30px;
+        color: white;
+        top: 30px;
+        right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1 class="one">I'm One</h1>
+
+    <div class="triangle"></div> -->
+
+    <div class="top-right">
+      <i class="bi bi-person-circle user-icon"></i>
+    </div>
+
+    <div class="card">
+      <p class="img-label">Poe Lay</p>
+      <img src="./img/one.jpg" alt="" />
+    </div>
+  </body>
+</html>
