@@ -1,0 +1,83 @@
+
+
+$primary : #085f63;
+$secondary : #ff5959;
+
+// $btn-color : white;
+// $input-btn-padding-x : 30px;
+// // $btn-border-radius : 20px;
+// // $input-border-radius : 20px;
+// $border-radius : 20px;
+// // $btn-padding-x : 30px;
+// $btn-padding-y : 15px;
+// $btn-font-weight : bold;
+// $btn-font-family : monospace;
+
+// $input-padding-y: 15px;
+
+// $border-width:                3px;
+// // $border-widths: (
+// //     1:6px,
+// //     2:9px,
+// //     7:15px
+// // );
+// $border-style:                dashed;
+// $border-color:                gray;
+// $border-color-translucent:    rgba(black, .175);
+
+// $spacer : 2rem;
+
+// // m-1 = margin : 0.5rem;
+// // m-2 = margin : 1rem;
+// // m-3 = margin : 2rem;
+// // m-4 = margin : 3rem;
+// // m-5 = margin : 6rem;
+
+// $spacer: 1rem;
+// $spacers: (
+//   0: 0,
+//   1: 100px,
+//   2: $spacer * .5,
+//   3: $spacer,
+//   4: $spacer * 1.5,
+//   5: $spacer * 3,
+//   6: $spacer * 6,
+//   7: $spacer * 9,
+//   8: $spacer * 12,
+//   9: $spacer * 15,
+// );
+
+$navbar-nav-link-padding-x:  1.5rem;
+
+$modal-backdrop-bg:                 pink;
+$modal-backdrop-opacity:            .9;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$theme-colors: (
+  "a":    $primary,
+  "b" : pink,
+//   "secondary":  $secondary,
+//   "success":    $success,
+//   "info":       $info,
+//   "warning":    $warning,
+//   "danger":     $danger,
+//   "light":      $light,
+//   "dark":       $dark
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+// brand color - primary, secondary
+
+// status color - success, danger, warning
+
+// light - white & dark - black

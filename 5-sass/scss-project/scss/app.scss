@@ -1,0 +1,82 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+$font-family-sans-serif: "Poppins", sans-serif;
+
+$primary: hsl(180, 66%, 49%);
+// $secondary : hsl(0, 0%, 75%);
+$dark: hsl(257, 27%, 26%);
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  // xl: 1140px,
+  //   xxl: 1320px,,
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 9,
+  8: $spacer * 12,
+);
+
+$body-color: rgb(154, 153, 157);
+$headings-color: hsl(255, 11%, 22%);
+
+$font-size-base: 1.125rem;
+$navbar-nav-link-padding-x: 1.3rem;
+$navbar-brand-font-size: 2rem;
+// $navbar-dark-color : rgb(193, 193, 193);
+
+$btn-padding-x: 1.5rem;
+$btn-padding-y: 0.7rem;
+$btn-font-size: 1rem;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.hero {
+  background-image: url(../images/illustration-working.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  height: 600px;
+}
+
+.shorten {
+  background-image: url(../images/bg-shorten-desktop.svg);
+  transform: translateY(-50%);
+}
+
+.two {
+  background-color: rgb(240, 241, 246);
+}
+.brand-icon {
+  width: 80px;
+  height: 80px;
+  background: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  margin-bottom: -40px;
+}
+
+.home-cta{
+    background-image: url(../images/bg-boost-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+  background-color: hsl(260, 8%, 14%);
+}

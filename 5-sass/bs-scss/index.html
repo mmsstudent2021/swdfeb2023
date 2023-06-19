@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-a " data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" height="40" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <div class=" container">
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-a" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-a">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class=" border border-2 border-a m-4 p-4 animate__animated animate__backInDown">
+        <h1 class=" fw-bold text-success border-bottom border-4 border-a pb-2">
+            Bootstrap Customize
+            <i class=" bi bi-person"></i>
+        </h1>
+
+        <p class=" text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, repellat ipsum. Libero illum nobis possimus! Lorem, ipsum dolor.
+        </p>
+
+        <a href="#" class=" btn btn-a">Learn Now</a>
+        <a href="#" class=" btn btn-outline-a">Join SWD Class</a>
+    </div>
+
+    <div class=" border border-7 border-b m-4 p-4 animate__animated animate__backInDown">
+      <h1 class=" fw-bold text-b border-bottom border-4 border-b pb-2">
+          Bootstrap Customize
+          <i class=" bi bi-person"></i>
+      </h1>
+
+      <p class=" text-black-50 mt-9">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, repellat ipsum. Libero illum nobis possimus! Lorem, ipsum dolor.
+      </p>
+
+      <a href="#" class=" btn btn-b">Learn Now</a>
+      <a href="#" class=" btn btn-outline-b">Join SWD Class</a>
+  </div>
+
+  <div class=" w-20 py-5 bg-a"></div>
+
+    <div class="m-4">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+              <label for="validationCustom01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="validationCustom03" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">State</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-a" type="submit">Submit form</button>
+            </div>
+          </form>
+    </div>
+  </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
