@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mb {
+        margin-bottom: 20px;
+      }
+
+      #result {
+        display: inline-block;
+        width: 200px;
+      }
+    </style>
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">
+  </head>
+  <body>
+    <h1 >Area Calculator</h1>
+    <div class="mb">
+      <span>Result : </span><span id="result"></span>
+      <button id="clear">Clear</button>
+      <button id="store">Store</button>
+    </div>
+    <input type="text" id="width" placeholder="Input Width" />
+    <input type="text" id="breadth" placeholder="Input Breadth" />
+    <button id="calc">Calculate</button>
+
+    <ul id="results">
+
+    </ul>
+
+    <script>
+      // logic
+      //   const calcArea = (width, breadth) => {
+      //     const result = width * breadth + " sqft";
+      //     console.log(result);
+      //   };
+
+      // select elements
+      const inputWidth = document.getElementById("width");
+      const inputBreadth = document.getElementById("breadth");
+      const calc = document.getElementById("calc");
+      const resultElement = document.getElementById("result");
+      const clear = document.getElementById("clear");
+      const store = document.getElementById("store");
+      const results = document.getElementById("results");
+
+      // event listen
+      calc.onclick = () => {
+        const result = inputWidth.value * inputBreadth.value + " sqft";
+        resultElement.innerText = ` ${inputWidth.value}ft * ${inputBreadth.value}ft = ${result} `;
+        inputWidth.value = inputBreadth.value = null;
+      };
+
+      clear.onclick = () => {
+        resultElement.innerText = null;
+      };
+
+      store.onclick = () => {
+        // results.innerHTML += `<li class=" animate__animated animate__fadeInDown">${resultElement.innerText}</li>`;
+        const li = document.createElement("li");
+        li.classList.add("animate__animated","animate__fadeInDown")
+        li.innerText = resultElement.innerText;
+      
+        results.append(li);
+
+        resultElement.innerText = null;
+
+      }
+
+
+      // const h1 = document.querySelector("h1");
+
+      // const p = document.createElement("p");
+      // p.innerText = "this is before";
+      // h1.before(p)
+
+      // console.log(h1);
+    </script>
+  </body>
+</html>

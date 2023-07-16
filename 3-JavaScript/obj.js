@@ -57,4 +57,16 @@
 
 // console.log(Number.MAX_SAFE_INTEGER);
 
+// const obj = {
+//     a : "aaa",
+//     b : function(){
+//         return "bbb";
+//     }
+// };
+
+// obj.a = "AAA"
+
+// console.log(obj.a);
+// console.log(obj.b());
+
 
