@@ -1,51 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
 
-    <textarea name="" id="text" cols="30" rows="10"></textarea>
+        body{
+            height: 2000px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- <textarea name="" id="text" cols="30" rows="10"></textarea> -->
 
     <!-- <button id="btn" >Click Me</button> -->
+
+    <!-- <form action="https://mms-it.com" id="register"> -->
+    <input type="text" id="text" name="your_name" required />
+
+    <br />
+    <br />
+
+    <input type="file" id="uploader" />
+
+    <br />
+    <br />
+
+    <select id="subject" name="your_subject">
+      <option value="mm">Myanmar</option>
+      <option value="en">English</option>
+      <option value="math">Math</option>
+    </select>
+
+    <br />
+    <br />
+
+    <button>Submit</button>
+
+    <!-- </form> -->
+
+    <img width="200" src="./img/neom-wUyMk7ziLT0-unsplash.jpg" alt="">
+
+    <!-- <a href="https://google.com" id="link">To Google</a> -->
+
     <script>
 
-        const text = document.querySelector("#text");
-
-        // text.addEventListener('keyup',function(){
-        //     console.log(text.value);
-        // })
-
-        // text.addEventListener('keyup',function(){
-        //     console.log("key up");
-        // })
-
-        // text.addEventListener('keydown',function(){
-        //     console.log("key down");
-        // })
-
-        // text.addEventListener('keypress',function(){
-        //     console.log("key press");
-        // })
+        window.addEventListener("scroll",(event) => {
+            console.clear()
+            console.log(event);
+            console.log(window.scrollY);
+        })
 
 
+    //   window.addEventListener("load", () => {
+    //     console.log("window fully load");
+    //   });
 
-        // function run(){
-        //     console.log("this is run");
-        // }
+    //   console.log("hello");
+    //   console.log("one");
+    //   console.log("two");
 
-        // const btn = document.querySelector("#btn");
+      //   const text = document.querySelector("#text");
 
-        // btn.addEventListener('mouseout',run)
+      //   document.addEventListener("keyup", (event) => {
+      //     console.clear();
+      //     console.log(event);
+      //     console.log(event.target.value);
 
+      //     // if (event.key === "Enter") {
+      //     //   console.log(text.value);
+      //     // }
+      //     // if(event.keyCode === 13){
+      //     //     console.log(text.value);
+      //     // }
+      //   });
 
-        // btn.onclick = run
-        // btn.ondblclick = run;
-        // btn.onmouseenter = run;
-        // btn.onmouseout = run;
-        // console.dir(btn);
+      // document.addEventListener('mousemove',(event) => {
+      //     console.clear();
+      //     console.log("U click on Document");
+      //     console.log(event);
+      // });
+
+      //   const register = document.querySelector("#register");
+      //   const subject = document.querySelector("#subject");
+
+      //   register.addEventListener("submit", (event) => {
+      //     event.preventDefault();
+      //     console.log(event);
+      //     console.log("U submit");
+
+      //     const formData = new FormData(register);
+
+      //     console.log("text : ", formData.get("your_name"));
+      //     console.log("subject : ",formData.get("your_subject"));
+
+      //     // form data clear
+      //     register.reset()
+
+      //     // subject.value = null
+      //     // text.value = null
+      //   });
+
+      //   const link = document.querySelector("#link");
+
+      // link.addEventListener("click",(event) => {
+      //     event.preventDefault()
+      // })
+
+      //   const uploader = document.querySelector("#uploader");
+
+      //   uploader.addEventListener("change", () => {
+      //     console.log("On Change Event");
+      //     console.log(uploader.files[0]);
+      //   });
+
+      // text.addEventListener("focus",() => {
+      //     console.log("U focus");
+      // })
+
+      // text.addEventListener("blur",() => {
+      //     console.log("U blur")
+      // })
+
+      //   text.addEventListener("change", () => {
+      //     console.log("Text on change event", text.value);
+      //   });
+
+      //   subject.addEventListener("change", () => {
+      //     console.log("Subject on change event", subject.value);
+      //   });
+
+      // text.addEventListener('keyup',function(){
+      //     console.log(text.value);
+      // })
+
+      // text.addEventListener('keyup',function(){
+      //     console.log("key up");
+      // })
+
+      // text.addEventListener('keydown',function(){
+      //     console.log("key down");
+      // })
+
+      // text.addEventListener('keypress',function(){
+      //     console.log("key press");
+      // })
+
+      // function run(){
+      //     console.log("this is run");
+      // }
+
+      // const btn = document.querySelector("#btn");
+
+      // btn.addEventListener('mouseout',run)
+
+      // btn.onclick = run
+      // btn.ondblclick = run;
+      // btn.onmouseenter = run;
+      // btn.onmouseout = run;
+      // console.dir(btn);
     </script>
-</body>
+  </body>
 </html>
