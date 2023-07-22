@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap');
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+
+$font-family-sans-serif : 'Rubik', 'Padauk', sans-serif;
+
+
+$primary : #333;
+$border-width : 2px;
+$border-color : $primary;
+$border-radius : 0;
+
+$border-radius-lg : 0;
+$border-radius-sm : 0;
+
+$form-check-input-border-radius : 0;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+.lists{
+
+    .empty-list{
+        display: none;
+    }
+
+    .empty-list:last-child{
+        display: block;
+    }
+
+}
