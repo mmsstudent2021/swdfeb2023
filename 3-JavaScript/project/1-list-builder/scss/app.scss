@@ -1,32 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap");
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/animate.css/animate.min.css";
 
+$font-family-sans-serif: "Rubik", "Padauk", sans-serif;
 
-$font-family-sans-serif : 'Rubik', 'Padauk', sans-serif;
+$primary: #333;
+$border-width: 2px;
+$border-color: $primary;
+$border-radius: 0;
 
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
-$primary : #333;
-$border-width : 2px;
-$border-color : $primary;
-$border-radius : 0;
-
-$border-radius-lg : 0;
-$border-radius-sm : 0;
-
-$form-check-input-border-radius : 0;
-
+$form-check-input-border-radius: 0;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+.lists {
 
-.lists{
+  .empty-list {
+    display: none;
+  }
 
-    .empty-list{
-        display: none;
-    }
-
-    .empty-list:last-child{
-        display: block;
-    }
-
+  .empty-list:last-child {
+    display: block;
+  }
+ 
 }
+
+.list{
+    overflow: hidden;
+}
+
+.list .controls{
+    transform: translateX(150%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.list:focus-within .controls, .list:hover .controls{
+    transform: translateX(0%);
+      opacity: 1;
+}
+
