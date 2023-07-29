@@ -44,3 +44,16 @@ $form-check-input-border-radius: 0;
       opacity: 1;
 }
 
+#records{
+
+
+  .empty-row {
+    display: none;
+  }
+
+  .empty-row:last-child {
+    display: table-row;
+  }
+
+}
+
