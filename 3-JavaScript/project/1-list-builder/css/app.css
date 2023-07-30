@@ -11861,6 +11861,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  counter-reset: section;
+}
+
+.record-no::before {
+  counter-increment: section;
+  content: counter(section);
+}
+
 .lists .empty-list {
   display: none;
 }
@@ -11888,6 +11897,42 @@ textarea.form-control-lg {
 }
 #records .empty-row:last-child {
   display: table-row;
+}
+#records .record-row:hover .record-row-del {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+#records .record-row-del {
+  left: 100%;
+  top: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: 0.5s;
+}
+#records .record-row:hover .record-quantity-control {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+#records .record-quantity-control {
+  background-color: #dedede;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+#records .record-quantity-increment {
+  transform: translateX(10px);
+}
+#records .record-quantity-decrement {
+  transform: translateX(-10px);
+}
+#records .record-quantity-control:hover, #records .record-quantity-control:active {
+  background-color: #ababab;
 }
 
 /*# sourceMappingURL=app.css.map */

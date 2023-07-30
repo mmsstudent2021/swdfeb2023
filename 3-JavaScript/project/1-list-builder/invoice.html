@@ -17,7 +17,7 @@
                 <h3 class="text-black-50">Invoice App</h3>
               </div>
 
-              <div class="bg-secondary-subtle p-3 my-4">
+              <div class="bg-secondary-subtle p-3 my-4 d-print-none">
                 <form action="" id="newRecord">
                   <div class="row">
                     <div class="col">
@@ -81,11 +81,11 @@
                 </table>
               </div>
 
-              <div class="text-end mt-auto mb-3">
+              <div class="text-end mt-auto mb-3 d-print-none">
                 <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                   Manage Inventory
                 </button>
-                <button class="btn btn-primary">Print</button>
+                <button onclick="print()" class="btn btn-primary">Print</button>
               </div>
             </div>
           </div>
@@ -97,26 +97,37 @@
       
       <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Manage Inventory
+            <br>
+            <span class=" text-black-50">Available Items</span>
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <div id="inventories"></div>
+
+          <div class="p-3 bg-secondary-subtle">
+            <form action="#" id="newItem">
+              <div class="mb-3">
+                <label for="" class="form-label">New Item Name</label>
+                <input type="text" id="newItemName" class=" form-control">
+              </div>
+
+              <div class="row g-3">
+                <div class="col">
+                  <input type="number" id="newItemPrice" placeholder="Price" class=" form-control">
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary w-100">Add Item</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </main>
+    
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./js/invoice.js"></script>
   </body>
