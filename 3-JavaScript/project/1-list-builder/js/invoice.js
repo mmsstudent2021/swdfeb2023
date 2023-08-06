@@ -91,6 +91,16 @@ const createRecordRow = (productId, quantity) => {
     }
   });
 
+  const recordQuantityIncrement = tableRow.querySelector(".record-quantity-increment");
+  recordQuantityIncrement.addEventListener('click',(e) => {
+    // const currentQuantity = tableRow.querySelector(".record-quantity");
+    // console.log(currentQuantity);
+
+    // console.log(e.target.parentElement.parentElement.previousElementSibling.previousElementSibling);
+    // console.log(e.target.closest("tr").querySelector(".record-quantity"));
+    console.dir(e.target.getBoundingClientRect());
+  })
+
   return tableRow;
 };
 
@@ -185,3 +195,17 @@ newItem.addEventListener("submit", (e) => {
   product.append(new Option(newItemObj.name, newItemObj.id));
   inventories.append(createItem(newItemObj.name, newItemObj.price));
 });
+
+
+// const test = document.querySelector(".test");
+
+// test.addEventListener("click",() => {
+//   console.log(test.children);
+//   const spinner = document.createElement("span");
+//   spinner.className = "spinner-border spinner-border-sm me-2";
+//   test.childNodes[0].nodeValue = "loading"
+//   test.prepend(spinner)
+//   // test.childNodes.before(spinner)
+
+//   // test.innerHTML = ``;
+// })
