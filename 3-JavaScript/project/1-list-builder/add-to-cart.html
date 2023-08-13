@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add to Cart Feature</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <main id="app" class="px-3 cart-feature">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex flex-column min-vh-100">
+              <nav
+                id="nav"
+                class="mb-4 mt-3 pb-3 border-bottom border-3 d-flex align-items-center justify-content-between"
+              >
+                <div class="">
+                  <h3 class="mb-0">MMS Solutions</h3>
+                  <p class="text-black-50 mb-0">E-commerce</p>
+                </div>
+                <div class="">
+                  <button class="btn btn-outline-primary" id="search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <button class="btn btn-primary" id="cartButton">
+                    <i class="bi bi-cart"></i>
+                  </button>
+                </div>
+              </nav>
+
+              <div class="mb-5">
+                <p class="mb-2">Product Categories</p>
+                <ul
+                  class="categories-list list-unstyled d-flex g-3"
+                  id="categoriesList"
+                >
+                  <li class="category-item border border-primary p-2 me-2">
+                    All
+                  </li>
+                </ul>
+              </div>
+
+              <div class="row g-4" id="productList">
+                
+              </div>
+
+              <footer class="bg-primary d-flex justify-content-between p-3 mt-5">
+                <p>
+                    Copyright &copy; <a href="https://mms-it.com">MMS IT</a>
+                </p>
+                <a href="#nav" class="btn btn-outline-light">
+                    <i class=" bi bi-arrow-up"></i>
+                </a>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>

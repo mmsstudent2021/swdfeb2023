@@ -11935,4 +11935,15 @@ body {
   background-color: #ababab;
 }
 
+.cart-feature .product-img {
+  height: 150px;
+  margin-bottom: -50px;
+}
+.cart-feature .product-title {
+  margin-top: 50px;
+}
+.cart-feature .product-description {
+  height: 5rem;
+}
+
 /*# sourceMappingURL=app.css.map */
