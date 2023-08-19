@@ -123,9 +123,14 @@ body {
 
   }
 
+  .product-item:hover .product-img{
+    rotate: -5deg;
+  }
+
   .product-img{
     height: 150px;
     margin-bottom: -50px;
+    transition: 300ms;
     // margin-left: 1rem;
   }
 
@@ -135,6 +140,47 @@ body {
 
   .product-description{
     height: 5rem;
+  }
+
+
+  .category-item{
+
+    cursor: pointer;
+    user-select: none;
+    transition: 300ms;
+  }
+
+  .category-item:active,.category-item.active{
+
+    background-color: #333;
+    color: #fff;
+    // transform: rotate(-10deg) scale(0.95);
+    rotate: -5deg;
+    scale: 0.95;
+
+  } 
+
+  .item-in-cart{
+
+  }
+
+
+  .item-in-cart-img{
+    height: 60px;
+    margin-bottom: -30px;
+  }
+
+  .item-in-cart-control{
+    width: 130px;
+  }
+
+  .item-in-cart:hover .item-in-cart-delete{
+    transform: translateX(0px);
+  }
+
+  .item-in-cart-delete{
+    transform: translateX(40px);
+    transition: 500ms;
   }
 
 

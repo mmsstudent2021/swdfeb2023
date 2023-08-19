@@ -270,11 +270,13 @@ const products = [
 ];
 
 const categories = [
+  "all",
   "men's clothing",
   "women's clothing",
   "electronics",
   "jewelry",
 ];
+// categories.unshift("All")
 
 // selectors
 
@@ -283,21 +285,111 @@ const search = document.querySelector("#search");
 const cartButton = document.querySelector("#cartButton");
 const categoriesList = document.querySelector("#categoriesList");
 const productList = document.querySelector("#productList");
+const cartCounterBadge = document.querySelectorAll(".cart-counter-badge")
+const carts = document.querySelector("#carts");
+const totalCost = document.querySelector("#totalCost");
 
 // function
-const createCategory = (title) => {
+
+const calculateTotalCost = () => {
+  totalCost.innerText = [...document.querySelectorAll(".item-in-cart-cost")].reduce((pv,cv) => pv+parseFloat(cv.innerHTML) ,0);
+}
+
+const cartCounter = () => {
+  cartCounterBadge.forEach(el => el.innerText = carts.children.length)
+}
+
+const createItemInCart = (product) => {
+    const itemInCart = document.createElement("div");
+    itemInCart.classList.add("item-in-cart");
+    itemInCart.innerHTML = `
+      <div class="mb-3">
+        <img class="item-in-cart-img ms-3" src="${product.image}" alt="">
+        <div class="border border-primary overflow-hidden p-3">
+          <div class="text-end">
+            <div class="item-in-cart-delete">
+              <i class=" bi bi-trash3 text-danger "></i>
+            </div>
+          </div>
+          <p class=" mb-0 text-truncate mb-2">${product.title}</p>
+          <div class=" d-flex justify-content-between align-items-end">
+            <p class=" text-black-50 mb-0">$ 
+              <span class="item-in-cart-cost fs-5">${product.price}</span>
+            </p>
+            <div class="input-group item-in-cart-control" >
+              <button class="btn btn-sm btn-primary">
+                <i class=" bi bi-dash"></i>
+              </button>
+              <input type="number" class=" form-control form-control-sm text-end"  value="1" min="1">
+              <button class="btn btn-sm btn-primary">
+                <i class=" bi bi-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    return itemInCart;
+}
+
+const categorize = (title, li) => {
+  console.log(title);
+  // must remove old active category
+  // const oldActiveCategory = document.querySelector(".category-item.active");
+
+  // console.log(oldActiveCategory);
+
+  // // active shi hma remove mal
+  // if(oldActiveCategory){
+  //   oldActiveCategory.classList.remove("active")
+  // }
+
+  document.querySelector(".category-item.active")?.classList.remove("active");
+
+  // add active class to current clicked category
+  li.classList.add("active");
+
+  // if (title === "all") {
+  //   productRender(products)
+  // } else {
+  // }
+
+  productRender(
+    products.filter((product) => title === "all" || product.category === title)
+  );
+};
+
+const createCategoryItem = (title) => {
   const li = document.createElement("li");
-  li.className = "category-item border border-primary p-2 me-2";
+  li.className = "category-item border border-primary p-2 me-2 text-capitalize";
   li.innerText = title;
+
+  li.addEventListener("click", categorize.bind(null, title, li));
+
   return li;
 };
 
 const rateStar = (rate) => {
-    let result = "";
-    for(let i=1;i<=5;i++){
-        result += i <= rate ? `<i class='bi bi-star-fill'></i>` :  `<i class='bi bi-star'></i>`;
-    }
-    return result;
+  let result = "";
+  for (let i = 1; i <= 5; i++) {
+    result +=
+      i <= rate
+        ? `<i class='bi me-2 bi-star-fill'></i>`
+        : `<i class='bi me-2 bi-star'></i>`;
+  }
+  return result;
+};
+
+const addToCart = (id,btn) => {
+    // console.log(id,btn);
+    btn.innerText = "Added";
+    btn.classList.add("active");
+
+    carts.append(createItemInCart(products.find(product => product.id === id)));
+
+    cartCounter()
+    calculateTotalCost()
 }
 
 const createProduct = (product) => {
@@ -308,7 +400,10 @@ const createProduct = (product) => {
         <img src="${product.image}" class="product-img ms-3"  alt="" />
         <div class="border border-primary p-3">
             <p class="product-title fw-bold text-truncate">${product.title}</p>
-            <p class="product-description small text-black-50">${product.description.substring(0,120)}</p>
+            <p class="product-description small text-black-50">${product.description.substring(
+              0,
+              120
+            )}</p>
             <div class=" d-flex justify-content-between">
                 <div class="stars">
                     ${rateStar(product.rating.rate.toFixed(0))}
@@ -322,21 +417,43 @@ const createProduct = (product) => {
                 $ <span class="price">${product.price}</span>
             </p>
             
-            <button class=" btn btn-outline-primary d-block w-100 add-to-cart">
+            <button class=" btn btn-outline-primary d-block w-100 add-to-cart-btn">
                 Add to Cart
             </button>
         </div>
     </div>
     `;
 
-    return productDiv;
+    const addToCartBtn = productDiv.querySelector(".add-to-cart-btn");
+
+    addToCartBtn.addEventListener("click",addToCart.bind(null,product.id,addToCartBtn))
+
+  return productDiv;
+};
+
+const productRender = (productsToRender) => {
+  productList.innerHTML = null;
+  productsToRender.forEach((product) =>
+    productList.append(createProduct(product))
+  );
+};
+
+const categoryRender = () => {
+  categories.forEach((category) => {
+    categoriesList.append(createCategoryItem(category));
+  });
 };
 
 // process
-categories.forEach((category) => {
-  categoriesList.append(createCategory(category));
-});
 
-products.forEach((product) => {
-    productList.append(createProduct(product))
-})
+(() => {
+
+  categoryRender();
+
+  categoriesList.children[0].classList.add("active");
+
+  productRender(products);
+  
+})()
+
+

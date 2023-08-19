@@ -11935,15 +11935,44 @@ body {
   background-color: #ababab;
 }
 
+.cart-feature .product-item:hover .product-img {
+  rotate: -5deg;
+}
 .cart-feature .product-img {
   height: 150px;
   margin-bottom: -50px;
+  transition: 300ms;
 }
 .cart-feature .product-title {
   margin-top: 50px;
 }
 .cart-feature .product-description {
   height: 5rem;
+}
+.cart-feature .category-item {
+  cursor: pointer;
+  user-select: none;
+  transition: 300ms;
+}
+.cart-feature .category-item:active, .cart-feature .category-item.active {
+  background-color: #333;
+  color: #fff;
+  rotate: -5deg;
+  scale: 0.95;
+}
+.cart-feature .item-in-cart-img {
+  height: 60px;
+  margin-bottom: -30px;
+}
+.cart-feature .item-in-cart-control {
+  width: 130px;
+}
+.cart-feature .item-in-cart:hover .item-in-cart-delete {
+  transform: translateX(0px);
+}
+.cart-feature .item-in-cart-delete {
+  transform: translateX(40px);
+  transition: 500ms;
 }
 
 /*# sourceMappingURL=app.css.map */
