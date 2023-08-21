@@ -11,10 +11,10 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="d-flex flex-column min-vh-100 ">
+            <div class="d-flex flex-column min-vh-100">
               <nav
                 id="nav"
-                class="mb-4 mt-3 pb-3 border-bottom border-3 d-flex align-items-center justify-content-between bg-white sticky-top "
+                class="mb-4 mt-3 pb-3 border-bottom border-3 d-flex align-items-center justify-content-between bg-white sticky-top"
               >
                 <div class="">
                   <h3 class="mb-0">MMS Solutions</h3>
@@ -24,9 +24,16 @@
                   <button class="btn btn-outline-primary" id="search">
                     <i class="bi bi-search"></i>
                   </button>
-                  <button class="btn btn-primary position-relative" data-bs-toggle="offcanvas" data-bs-target="#mycart" id="cartButton">
+                  <button
+                    class="btn btn-primary position-relative"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mycart"
+                    id="cartButton"
+                  >
                     <i class="bi bi-cart"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge">
+                    <span
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge"
+                    >
                       0
                       <span class="visually-hidden">unread messages</span>
                     </span>
@@ -42,16 +49,17 @@
                 ></ul>
               </div>
 
-              <div class="row g-4" id="productList">
-                
-              </div>
+              <div class="row g-4" id="productList"></div>
 
-              <footer class="bg-primary d-flex align-items-center justify-content-between p-3 mt-5">
+              <footer
+                class="bg-primary d-flex align-items-center justify-content-between p-3 mt-5"
+              >
                 <p class="text-white mb-0">
-                    Copyright &copy; <a class=" text-reset" href="https://mms-it.com">MMS IT</a>
+                  Copyright &copy;
+                  <a class="text-reset" href="https://mms-it.com">MMS IT</a>
                 </p>
                 <a href="#nav" class="btn btn-outline-light">
-                    <i class=" bi bi-arrow-up"></i>
+                  <i class="bi bi-arrow-up"></i>
                 </a>
               </footer>
             </div>
@@ -59,31 +67,44 @@
         </div>
       </div>
 
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="mycart" aria-labelledby="mycartLabel">
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="mycart"
+        aria-labelledby="mycartLabel"
+      >
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="mycartLabel">
-            My Cart 
-            <span class=" badge bg-primary ms-2 cart-counter-badge">
-              0
-            </span>
+            My Cart
+            <span class="badge bg-primary ms-2 cart-counter-badge"> 0 </span>
           </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="offcanvas-body">
           <div class="" id="carts"></div>
-          <div class="payment">
-            <div class=" position-absolute start-0 bottom-0 w-100 px-3">
-              <p class=" text-end fs-3 mb-2 pt-3 border-top border-primary">
+          <div class="" style="height: 150px"></div>
+          <div class="order-section">
+            <div
+              class="position-absolute bg-white start-0 bottom-0 w-100 px-3"
+              style="z-index: 5"
+            >
+              <p class="text-end fs-3 mb-2 pt-3 border-top border-primary">
                 $ <span id="totalCost">0</span>
               </p>
-              <button class="btn btn-lg btn-primary d-block w-100 mb-3">
-                Payment
+              <button id="order" class="btn btn-lg btn-primary d-block w-100 mb-3">
+                Place Order
               </button>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/cart.js"></script>
   </body>

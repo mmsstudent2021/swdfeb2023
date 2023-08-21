@@ -2,6 +2,20 @@
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "../node_modules/animate.css/animate.min.css";
 
+// sweetalert2
+$swal2-confirm-button-border-radius: 0 !default;
+$swal2-confirm-button-background-color: #333 !default;
+
+$swal2-cancel-button-border-radius: 0 !default;
+$swal2-cancel-button-background-color: white !default;
+$swal2-cancel-button-color: #333 !default;
+
+$swal2-border-radius: 0 !default;
+$swal2-button-padding: 0.625em 2em !default;
+
+
+@import "../node_modules/sweetalert2/src/sweetalert2.scss";
+
 $font-family-sans-serif: "Rubik", "Padauk", sans-serif;
 
 $primary: #333;
@@ -181,6 +195,8 @@ body {
   .item-in-cart-delete{
     transform: translateX(40px);
     transition: 500ms;
+    width: 30px;
+    margin-left: auto;
   }
 
 
