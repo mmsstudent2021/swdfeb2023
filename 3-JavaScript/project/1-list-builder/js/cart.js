@@ -316,7 +316,7 @@ const createItemInCart = (product) => {
   itemInCart.innerHTML = `
       <div class="mb-3">
         <img class="item-in-cart-img ms-3" src="${product.image}" alt="">
-        <div class="border border-primary overflow-hidden p-3">
+        <div class="border border-primary bg-white overflow-hidden p-3">
           <div class="text-end">
             <div class="item-in-cart-delete " >
               <i class=" bi bi-trash3 text-danger "></i>
@@ -456,6 +456,40 @@ const addToCart = (productId) => {
     `[product-id='${productId}']`
   );
 
+  const currentProductImg = currentProductCard.querySelector(".product-img");
+
+  // console.log(currentProductImg.getBoundingClientRect().height);
+
+  const tempImg = new Image();
+  tempImg.src = currentProductImg.src;
+  tempImg.height = currentProductImg.getBoundingClientRect().height;
+  tempImg.style.position = "fixed";
+  tempImg.style.top = currentProductImg.getBoundingClientRect().top + "px";
+  tempImg.style.left = currentProductImg.getBoundingClientRect().left + "px";
+  tempImg.style.zIndex = 2000;
+  // tempImg.style.scale = 0.6;
+  tempImg.style.transition = 500 + "ms";
+
+  //new place
+  setTimeout(() => {
+    tempImg.style.top =
+      cartButton.querySelector(".bi-cart").getBoundingClientRect().y + "px";
+    tempImg.style.left =
+      cartButton.querySelector(".bi-cart").getBoundingClientRect().x + "px";
+    // tempImg.style.scale = 0.2;
+    tempImg.style.height = 10 + "px";
+  }, 100);
+
+  tempImg.addEventListener("transitionend", () => {
+    tempImg.remove();
+    cartButton.classList.add("animate__tada");
+    cartButton.addEventListener("animationend", () => {
+      cartButton.classList.remove("animate__tada");
+    });
+  });
+
+  app.prepend(tempImg);
+
   const currentAddToCartBtn =
     currentProductCard.querySelector(".add-to-cart-btn");
 
@@ -508,14 +542,35 @@ const removeFromCart = (productId) => {
     confirmButtonText: "Remove",
   }).then((result) => {
     if (result.isConfirmed) {
-      currentItemInCart.remove();
-      cartCounter();
-      calculateTotalCost();
+      currentItemInCart.classList.add("animate__animated", "animate__hinge");
 
-      currentAddToCartBtn.innerText = "Add to Cart";
-      currentAddToCartBtn.classList.remove("active");
+      currentItemInCart.addEventListener("animationend", () => {
+        currentItemInCart.remove();
 
-      Swal.fire("Deleted!", "Your item has been removed.", "success");
+        cartCounter();
+        calculateTotalCost();
+
+        currentAddToCartBtn.innerText = "Add to Cart";
+        currentAddToCartBtn.classList.remove("active");
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "bottom-start",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+      
+        Toast.fire({
+          icon: "success",
+          title: "Your item has been removed.",
+        });
+
+      });
     }
   });
 };
@@ -524,6 +579,16 @@ const createProduct = (product) => {
   const productDiv = document.createElement("div");
   productDiv.className = "col-12 col-md-6 col-lg-4";
   productDiv.setAttribute("product-id", product.id);
+
+  const isInCart = [...document.querySelectorAll("[item-in-cart-id]")].find(
+    (el) => el.getAttribute("item-in-cart-id") == product.id
+  );
+
+  const normalBtn = `<button class=" btn btn-outline-primary d-block w-100 add-to-cart-btn">Add to Cart</button>`;
+  const activeBtn = `<button class="active btn btn-outline-primary d-block w-100 add-to-cart-btn">Added</button>`;
+
+  // console.log(isInCart ? true : false);
+
   productDiv.innerHTML = `
     <div class="product-item">
         <img src="${product.image}" class="product-img ms-3"  alt="" />
@@ -545,10 +610,9 @@ const createProduct = (product) => {
             <p class="product-price fw-bold">
                 $ <span class="price">${product.price}</span>
             </p>
-            
-            <button class=" btn btn-outline-primary d-block w-100 add-to-cart-btn">
-                Add to Cart
-            </button>
+
+
+            ${isInCart ? activeBtn : normalBtn}
         </div>
     </div>
     `;
@@ -564,51 +628,66 @@ const createProduct = (product) => {
 };
 
 const placeOrder = () => {
-  Swal.fire({
-    title: "Are you ready to place Order ?",
-    text: "It will send order items' information to sellers",
-    icon: "question",
-    showCancelButton: true,
-    confirmButtonText: "Confirm",
-  }).then((result) => {
-    const allItemInCart = carts.querySelectorAll(".item-in-cart");
-    const items = [];
-    const myOrder = {};
-
-    allItemInCart.forEach((el) => {
-      // const item = {
-      //   productId : el.getAttribute("item-in-cart-id"),
-      //   quantity : el.querySelector(".item-quantity").valueAsNumber
-      // }
-      const item = {};
-      item.productId = el.getAttribute("item-in-cart-id");
-      item.quantity = el.querySelector(".item-quantity").valueAsNumber;
-
-      items.push(item);
-    });
-
-    // add ordered items to myOrder Object
-    myOrder.items = items;
-    myOrder.total = totalCost.innerText;
-    myOrder.user_id = 5;
-    myOrder.user_name = "Hein Htet Zan";
-    myOrder.order_id = "XG35223DF39";
-
-    console.log(myOrder);
-
-    carts.innerHTML = null;
-    cartCounter();
-    calculateTotalCost();
-
-    myCart.hide();
-
+  const itemInCart = document.querySelectorAll(".item-in-cart");
+  if (itemInCart.length === 0) {
     Swal.fire(
-      "Order Successful!",
-      "Your ordered is taken place to seller.",
-      "success"
+      "Please add any item to cart",
+      "You don't have any item selected",
+      "warning"
     );
-  });
+  } else {
+    Swal.fire({
+      title: "Are you ready to place Order ?",
+      text: "It will send order items' information to sellers",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Confirm",
+    }).then((result) => {
+      const allItemInCart = carts.querySelectorAll(".item-in-cart");
+      const items = [];
+      const myOrder = {};
+
+      allItemInCart.forEach((el) => {
+        // const item = {
+        //   productId : el.getAttribute("item-in-cart-id"),
+        //   quantity : el.querySelector(".item-quantity").valueAsNumber
+        // }
+        const item = {};
+        item.productId = el.getAttribute("item-in-cart-id");
+        item.quantity = el.querySelector(".item-quantity").valueAsNumber;
+
+        items.push(item);
+      });
+
+      // add ordered items to myOrder Object
+      myOrder.items = items;
+      myOrder.total = totalCost.innerText;
+      myOrder.user_id = 5;
+      myOrder.user_name = "Hein Htet Zan";
+      myOrder.order_id = "XG35223DF39";
+
+      console.log(myOrder);
+
+      carts.innerHTML = null;
+      cartCounter();
+      calculateTotalCost();
+
+      myCart.hide();
+
+      Swal.fire(
+        "Order Successful!",
+        "Your ordered is taken place to seller.",
+        "success"
+      );
+    });
+  }
 };
+
+const searchProduct = (keyword) => {
+  productRender(products.filter(product => {
+    return product.title.search(keyword) != -1 || product.description.search(keyword) != -1
+  }))
+}
 
 const productRender = (productsToRender) => {
   productList.innerHTML = null;
