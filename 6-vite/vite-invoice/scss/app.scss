@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/animate.css/animate.min.css";
+
+$primary: #333;
+$border-width: 2px;
+$border-color: $primary;
+$border-radius: 0;
+
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$form-check-input-border-radius: 0;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  counter-reset: section;
+}
+
+.record-no::before {
+  counter-increment: section;
+  content: counter(section);
+}
+
+#records {
+  .empty-row {
+    display: none;
+  }
+
+  .empty-row:last-child {
+    display: table-row;
+  }
+
+  .record-row:hover .record-row-del {
+    // display: block;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  .record-row-del {
+    left: 100%;
+    top: 3px;
+    // display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: 0.5s;
+  }
+
+  .record-row:hover .record-quantity-control {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  .record-quantity{
+    user-select: none;
+  }
+
+  .record-quantity-control {
+    background-color: #dedede;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .record-quantity-increment {
+    transform: translateX(10px);
+  }
+
+  .record-quantity-decrement {
+    transform: translateX(-10px);
+  }
+
+  .record-quantity-control:hover,
+  .record-quantity-control:active {
+    background-color: #ababab;
+  }
+}

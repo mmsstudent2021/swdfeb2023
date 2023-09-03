@@ -309,24 +309,24 @@ const cartCounter = () => {
   cartCounterBadge.forEach((el) => (el.innerText = carts.children.length));
 };
 
-const createItemInCart = (product) => {
+const createItemInCart = ({id,title,image,price}) => {
   const itemInCart = document.createElement("div");
   itemInCart.classList.add("item-in-cart");
-  itemInCart.setAttribute("item-in-cart-id", product.id);
+  itemInCart.setAttribute("item-in-cart-id", id);
   itemInCart.innerHTML = `
       <div class="mb-3">
-        <img class="item-in-cart-img ms-3" src="${product.image}" alt="">
+        <img class="item-in-cart-img ms-3" src="${image}" alt="">
         <div class="border border-primary bg-white overflow-hidden p-3">
           <div class="text-end">
             <div class="item-in-cart-delete " >
               <i class=" bi bi-trash3 text-danger "></i>
             </div>
           </div>
-          <p class=" mb-0 text-truncate mb-2">${product.title}</p>
+          <p class=" mb-0 text-truncate mb-2">${title}</p>
           <div class=" d-flex justify-content-between align-items-end">
             <p class=" text-black-50 mb-0">$ 
               <span class="item-in-cart-cost fs-5">${
-                product.price * config.defaultItemQuantity
+                price * config.defaultItemQuantity
               }</span>
             </p>
             <div class="input-group item-in-cart-control" >
@@ -349,7 +349,7 @@ const createItemInCart = (product) => {
 
   itemInCartDelete.addEventListener(
     "click",
-    removeFromCart.bind(null, product.id)
+    removeFromCart.bind(null, id)
   );
 
   const itemIncrement = itemInCart.querySelector(".item-increment");
@@ -359,7 +359,7 @@ const createItemInCart = (product) => {
 
   const updateCost = () => {
     itemInCartCost.innerText = (
-      itemQuantity.valueAsNumber * product.price
+      itemQuantity.valueAsNumber * price
     ).toFixed(2);
     calculateTotalCost();
   };

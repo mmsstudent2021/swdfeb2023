@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <main id="app" class="px-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex flex-column min-vh-100">
+              <div class="px-3 mb-4 mt-3">
+                <h1 class="mb-0">MMS Solutions</h1>
+                <h3 class="text-black-50">Invoice App</h3>
+              </div>
+
+              <div class="bg-secondary-subtle p-3 my-4 d-print-none">
+                <form action="" id="newRecord">
+                  <div class="row">
+                    <div class="col">
+                      <div class="">
+                        <label for="productSelect" class="form-label"
+                          >Select Product</label
+                        >
+                        <select
+                          name="productSelect"
+                          id="productSelect"
+                          class="form-select"
+                          required
+                        ></select>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <label for="quantity" class="form-label"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          name="quantity"
+                          id="quantity"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col align-self-end">
+                      <button class="btn btn-primary w-100">Add Record</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="px-3">
+                <table class="table" id="records">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>#</th>
+                      <th class="text-start">Product</th>
+                      <th class="text-end">Price</th>
+                      <th class="text-end">Quantity</th>
+                      <th class="text-end">Cost</th>
+                    </tr>
+                  </thead>
+                  <tbody id="record-rows">
+                    <tr class="empty-row">
+                      <td class="text-center" colspan="5">
+                        There is no record
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot class="table-primary">
+                    <tr>
+                      <td colspan="4" class="text-start">Total</td>
+                      <td class="text-end records-total">0</td>
+                    </tr>
+                  </tfoot>
+                </table>
+
+              
+              </div>
+
+              <div class="text-end mt-auto mb-3 d-print-none">
+                <button
+                  class="btn btn-outline-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasExample"
+                  aria-controls="offcanvasExample"
+                >
+                  Manage Inventory
+                </button>
+                <button onclick="print()" class="btn btn-primary">Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="offcanvas offcanvas-end"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Manage Inventory
+            <br />
+            <span class="text-black-50">Available Items</span>
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div id="inventories"></div>
+
+          <div class="p-3 bg-secondary-subtle">
+            <form action="#" id="newItem">
+              <div class="mb-3">
+                <label for="" class="form-label">New Item Name</label>
+                <input type="text" name="newItemName"  id="newItemName" class="form-control" />
+              </div>
+
+              <div class="row g-3">
+                <div class="col">
+                  <input
+                    type="number"
+                    id="newItemPrice"
+                    name="newItemPrice"
+                    placeholder="Price"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary w-100">Add Item</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
