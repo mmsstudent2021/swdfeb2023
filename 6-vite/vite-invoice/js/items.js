@@ -11,6 +11,6 @@ export const createItem = (name, price) => {
 
 export const itemRender = (products) => {
   products.forEach(({ id, name, price }) => {
-    inventories.append(createItem(name,price));
+    inventories.append(createItem(name, price));
   });
 };

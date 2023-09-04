@@ -1,6 +1,8 @@
+import { products } from "./data";
 import { createItem } from "./items";
+import { addProduct, productRender } from "./product";
 import { calculateTotal, createRecord, updateRecord } from "./record";
-import { newItem, newRecord, recordRows } from "./selectors";
+import { inventories, newItem, newRecord, recordRows } from "./selectors";
 
 export const handleAddRecordFrom = (e) => {
   e.preventDefault();
@@ -33,7 +35,10 @@ export const handleAddRecordFrom = (e) => {
 export const handleNewItemFrom = (event) => {
     event.preventDefault()
     const formData = new FormData(newItem);
-    console.log(
+    inventories.append(
         createItem(formData.get("newItemName"),formData.get("newItemPrice"))
     );;
+    addProduct(formData.get("newItemName"),formData.get("newItemPrice"));
+    productRender(products)
+    newItem.reset()
 }

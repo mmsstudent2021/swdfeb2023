@@ -35,14 +35,13 @@ export const createRecord = (productId, quantity) => {
     .querySelector(".record-row-del")
     .addEventListener("click", deleteRecord);
 
- tableRow
- .querySelector(".record-quantity-increment")
- .addEventListener('click', updateRecord.bind(null,productId,1));
+  tableRow
+    .querySelector(".record-quantity-increment")
+    .addEventListener("click", incrementRecordQuantity.bind(null, productId));
 
- tableRow
- .querySelector(".record-quantity-decrement")
- .addEventListener('click', updateRecord.bind(null,productId,-1));
-  
+  tableRow
+    .querySelector(".record-quantity-decrement")
+    .addEventListener("click", decrementRecordQuantity.bind(null, productId));
 
   return tableRow;
 };
@@ -58,12 +57,25 @@ export const deleteRecord = (event) => {
   }
 };
 
-export const updateRecord = (productId,quantity) => {
-  const isExistedRow = document.querySelector(`[product-id='${productId}']`);
+export const incrementRecordQuantity = (productId, max = 1000) => {
+  updateRecord(productId, 1);
+};
 
-  let currentPrice = isExistedRow.querySelector(".record-price");
-  let currentQuantity = isExistedRow.querySelector(".record-quantity");
-  let currentCost = isExistedRow.querySelector(".record-cost");
+export const decrementRecordQuantity = (productId, min = 1) => {
+  const currentRecord = document.querySelector(`[product-id='${productId}']`);
+  const currentQuantity = currentRecord.querySelector(".record-quantity");
+
+  if (currentQuantity > min) {
+    updateRecord(productId, -1);
+  }
+};
+
+export const updateRecord = (productId, quantity) => {
+  const currentRecord = document.querySelector(`[product-id='${productId}']`);
+
+  const currentPrice = currentRecord.querySelector(".record-price");
+  const currentQuantity = currentRecord.querySelector(".record-quantity");
+  const currentCost = currentRecord.querySelector(".record-cost");
 
   let newQuantity =
     parseFloat(currentQuantity.innerText) + parseFloat(quantity);

@@ -5,6 +5,7 @@ import { productRender } from "./product";
 import { newItem, newRecord } from "./selectors";
 
 class Invoice {
+
   initialRender() {
     // 1. product render
     productRender(products);
@@ -18,6 +19,7 @@ class Invoice {
   }
 
   init() {
+    
     console.log("Invoice App Start");
 
     this.initialRender()
@@ -26,6 +28,7 @@ class Invoice {
 
     
   }
+  
 }
 
 export default Invoice;
