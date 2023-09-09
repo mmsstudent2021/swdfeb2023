@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>click</button>
+    <script>
+
+        const run = (x,y) => {
+            console.log(this);
+            console.log( x + y );
+        }
+
+        // console.dir(run);
+
+        // console.log(run(1,4));
+
+        document.querySelector("button").addEventListener("click",run.bind(null,1,4))
+
+    </script>  
+
+</body>
+</html>
