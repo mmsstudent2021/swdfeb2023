@@ -27,7 +27,6 @@ export const handleAddRecordFrom = (e) => {
 
   newRecord.reset();
 
-  calculateTotal()
 
 };
 

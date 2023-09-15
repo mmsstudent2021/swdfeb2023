@@ -1,6 +1,6 @@
 import { products } from "./data";
 import { cost } from "./functions";
-import { recordsTotal } from "./selectors";
+import { recordRows, recordsTotal } from "./selectors";
 
 export const createRecord = (productId, quantity) => {
   const { id, name, price } = products.find(({ id }) => id == productId);
@@ -52,20 +52,19 @@ export const deleteRecord = (event) => {
     tableRow.classList.add("animate__animated", "animate__fadeOut");
     tableRow.addEventListener("animationend", () => {
       tableRow.remove();
-      calculateTotal();
     });
   }
 };
 
-export const incrementRecordQuantity = (productId, max = 1000) => {
+export const incrementRecordQuantity = (productId) => {
   updateRecord(productId, 1);
 };
 
-export const decrementRecordQuantity = (productId, min = 1) => {
+export const decrementRecordQuantity = (productId) => {
   const currentRecord = document.querySelector(`[product-id='${productId}']`);
   const currentQuantity = currentRecord.querySelector(".record-quantity");
 
-  if (currentQuantity > min) {
+  if (currentQuantity.innerText > 1) {
     updateRecord(productId, -1);
   }
 };
@@ -92,3 +91,37 @@ export const calculateTotal = () => {
     ...document.querySelectorAll(".record-cost"),
   ].reduce((pv, cv) => pv + parseFloat(cv.innerText), 0);
 };
+
+export const observerOptions = {
+  childList: true,
+  subtree: true,
+};
+
+export const recordRowObserver = new MutationObserver(() => {
+  console.log("I'm working");
+  calculateTotal();
+  const rows = [...document.querySelectorAll(".record-row")].map(el=>{
+    return { productId : parseInt(el.getAttribute("product-id")),quantity : parseFloat(el.querySelector(".record-quantity").innerText) }
+  });
+
+  localStorage.setItem("rows",JSON.stringify(rows))
+
+  console.log(rows);
+
+  let text = recordsTotal.innerText;
+
+  // Create a new SpeechSynthesisUtterance object
+  let utterance = new SpeechSynthesisUtterance();
+
+  // Set the text and voice of the utterance
+  utterance.text = text;
+  utterance.rate = 0.5;
+  utterance.voice = window.speechSynthesis.getVoices()[23];
+
+  // Speak the utterance
+  window.speechSynthesis.speak(utterance);
+  
+
+});
+
+

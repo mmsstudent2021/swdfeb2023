@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .key {
+      }
+      .key.active {
+        /* transition: 200ms; */
+
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paino m-5 d-flex justify-content-between">
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="a">C4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="s">D4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="d">E4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="f">F4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="j">G4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="k">A4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key="l">B4</div>
+      <div class="key py-5 px-4 bg-primary-subtle rounded" key=";">C5</div>
+    </div>
+
+    <!-- <audio src="./audio/to_the_bone.mp3" controls></audio> -->
+    <script>
+      const buttons = document.querySelectorAll(".key");
+      buttons.forEach((button) => {
+        // console.log(button);
+        button.addEventListener("click", () => {
+          button.classList.add("active");
+          //   button.addEventListener("transitionend", () => {
+          //     button.classList.remove("active");
+          //   });
+          setTimeout(() => {
+            button.classList.remove("active");
+          }, 200);
+          const currentUrl = `/audio/sound/${button.innerText}.mp3`;
+          const audio = new Audio(currentUrl);
+          audio.play();
+        });
+      });
+
+      document.addEventListener("keyup", (event) => {
+        console.log(event.key);
+        const currentElement = [...buttons].find((button) => {
+          return button.getAttribute("key") === event.key;
+        });
+        console.log(currentElement);
+
+        currentElement && currentElement.click();
+      });
+    </script>
+  </body>
+</html>

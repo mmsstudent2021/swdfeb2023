@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Get Location</button>
+
+    <script>
+      // const fetchUrl = "https://api.escuelajs.co/api/v1/products";
+
+      // fetch(fetchUrl)
+      // .then(res => res.json())
+      // .then(json => console.log(json))
+
+    //   document.querySelector("button").addEventListener("click", () => {
+    //     navigator.geolocation.getCurrentPosition((position) => {
+    //         console.log(position.coords.latitude,position.coords.longitude);
+    //     })
+    //   });
+
+    const header = new Headers();
+
+    header.append("myName","hein htet zan");
+
+    
+
+    console.log(header.get("myName"));
+    </script>
+  </body>
+</html>
