@@ -1,5 +1,7 @@
-import { products } from "./data";
-import { cost } from "./functions";
+import { debounce } from "lodash";
+import Invoice from "./Invoice";
+import { products, userConfig } from "./data";
+import { cost, textToSpeech } from "./functions";
 import { recordRows, recordsTotal } from "./selectors";
 
 export const createRecord = (productId, quantity) => {
@@ -57,7 +59,7 @@ export const deleteRecord = (event) => {
 };
 
 export const incrementRecordQuantity = (productId) => {
-  updateRecord(productId, 1);
+  updateRecord(productId, Invoice.config("incrementQuantity", 1));
 };
 
 export const decrementRecordQuantity = (productId) => {
@@ -97,31 +99,21 @@ export const observerOptions = {
   subtree: true,
 };
 
+const debounceTextToSpeech = debounce(() => {
+  textToSpeech(recordsTotal.innerText);
+}, 1000);
+
 export const recordRowObserver = new MutationObserver(() => {
-  console.log("I'm working");
+  // console.log("I'm working");
   calculateTotal();
-  const rows = [...document.querySelectorAll(".record-row")].map(el=>{
-    return { productId : parseInt(el.getAttribute("product-id")),quantity : parseFloat(el.querySelector(".record-quantity").innerText) }
+  const rows = [...document.querySelectorAll(".record-row")].map((el) => {
+    return {
+      productId: parseInt(el.getAttribute("product-id")),
+      quantity: parseFloat(el.querySelector(".record-quantity").innerText),
+    };
   });
 
-  localStorage.setItem("rows",JSON.stringify(rows))
+  localStorage.setItem("rows", JSON.stringify(rows));
 
-  console.log(rows);
-
-  let text = recordsTotal.innerText;
-
-  // Create a new SpeechSynthesisUtterance object
-  let utterance = new SpeechSynthesisUtterance();
-
-  // Set the text and voice of the utterance
-  utterance.text = text;
-  utterance.rate = 0.5;
-  utterance.voice = window.speechSynthesis.getVoices()[23];
-
-  // Speak the utterance
-  window.speechSynthesis.speak(utterance);
-  
-
+  Invoice.config("totalVoice", true) && debounceTextToSpeech();
 });
-
-

@@ -1,5 +1,6 @@
 export const app = document.querySelector("#app");
 export const newRecord = document.querySelector("#newRecord");
+export const mic = document.querySelector("#mic");
 export const productSelect = document.querySelector("#productSelect");
 export const quantity = document.querySelector("#quantity");
 export const records = document.querySelector("#records");

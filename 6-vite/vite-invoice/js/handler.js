@@ -2,7 +2,7 @@ import { products } from "./data";
 import { createItem } from "./items";
 import { addProduct, productRender } from "./product";
 import { calculateTotal, createRecord, updateRecord } from "./record";
-import { inventories, newItem, newRecord, recordRows } from "./selectors";
+import { inventories, mic, newItem, newRecord, recordRows } from "./selectors";
 
 export const handleAddRecordFrom = (e) => {
   e.preventDefault();
@@ -40,4 +40,30 @@ export const handleNewItemFrom = (event) => {
     addProduct(formData.get("newItemName"),formData.get("newItemPrice"));
     productRender(products)
     newItem.reset()
+}
+
+export const handleMic = () => {
+  console.log("U click mic");
+  const recognition = new webkitSpeechRecognition();
+  // console.log(recognition);
+
+  const loaderUi = document.createElement("div");
+  loaderUi.classList.add("spinner-border","spinner-border-sm");
+
+  recognition.addEventListener("start",() => {
+    console.log("record start");
+    mic.before(loaderUi)
+  })
+
+  recognition.addEventListener("end",() => {
+    loaderUi.remove()
+    console.log("record end");
+  })
+
+  recognition.addEventListener("result",(event) => {
+    console.log("record result",event.results[0][0].transcript);
+  })
+
+  recognition.start();
+
 }
