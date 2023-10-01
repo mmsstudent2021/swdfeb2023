@@ -5,6 +5,6 @@ import { taskLists, textInput } from "./selectors";
 export const addBtnHandler =() => {
     // console.log(textInput.value);
     addTask(textInput.value);
-    taskRender(getTask());
+    // taskRender(getTask());
     textInput.value = null;
 }

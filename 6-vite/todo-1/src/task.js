@@ -1,6 +1,19 @@
 import { taskLists } from "./app/selectors";
 
-const tasks = [];
+const tasks = new Proxy([], {
+  // get(target, property, receiver) {
+  //   console.log("U access proxy");
+
+  //   return Reflect.get(target, property, receiver);
+  // },
+  set(target, property, value, receiver) {
+    // console.log("U change proxy");
+
+    taskRender(getTask())
+
+    return Reflect.set(target, property, value, receiver);
+  },
+});
 
 export const getTask = () => {
   return tasks;
@@ -33,7 +46,7 @@ export const createTaskUi = (text, index) => {
 export const deleteTask = (event) => {
   const currentIndex = event.target.closest("li").getAttribute("data-index");
   removeTask(currentIndex);
-  taskRender(getTask());
+  // taskRender(getTask());
 };
 
 export const taskRender = (lists) => {
