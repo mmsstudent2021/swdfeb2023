@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="app">
+      <div class="max-w-[500px] mx-auto">
+        <h1 class="font-serif text-2xl font-bold mt-5 mb-7">Contact App</h1>
+
+        <form id="createContactForm">
+          <div class="flex gap-3">
+            <input
+              class="h-10 border px-2 border-neutral-600 disabled:opacity-20"
+              name="name"
+              placeholder="Contact Name"
+              type="text"
+              required
+            />
+            <input
+              class="h-10 border px-2 border-neutral-600 disabled:opacity-20"
+              name="number"
+              placeholder="Phone Number"
+              type="text"
+              required
+            />
+            <button
+              class="h-10 bg-neutral-600 text-neutral-100 whitespace-nowrap px-4 disabled:opacity-20"
+            >
+              Add Now
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
