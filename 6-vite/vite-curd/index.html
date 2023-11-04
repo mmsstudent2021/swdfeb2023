@@ -7,32 +7,108 @@
   </head>
   <body>
     <main id="app">
-      <div class="max-w-[500px] mx-auto">
+      <div class="max-w-[600px] mx-auto">
         <h1 class="font-serif text-2xl font-bold mt-5 mb-7">Contact App</h1>
 
-        <form id="createContactForm">
-          <div class="flex gap-3">
-            <input
-              class="h-10 border px-2 border-neutral-600 disabled:opacity-20"
-              name="name"
-              placeholder="Contact Name"
-              type="text"
-              required
-            />
-            <input
-              class="h-10 border px-2 border-neutral-600 disabled:opacity-20"
-              name="number"
-              placeholder="Phone Number"
-              type="text"
-              required
-            />
+        <form id="createContactForm" class="mb-10">
+          <div class="grid grid-cols-5 gap-3">
+            <div class="col-span-2">
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="eg. kyaw kyaw"
+                required
+              />
+            </div>
+            <div class="col-span-2">
+              <label
+                for="phone"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your phone</label
+              >
+              <input
+                type="text"
+                id="phone"
+                name="number"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="eg. 092423432"
+                required
+              />
+            </div>
             <button
-              class="h-10 bg-neutral-600 text-neutral-100 whitespace-nowrap px-4 disabled:opacity-20"
+              class="text-white col-span-1 h-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
-              Add Now
+              Add
             </button>
           </div>
         </form>
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">#</th>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Phone</th>
+                <th scope="col" class="px-6 py-3">Action</th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+              <tr
+                class="bg-white animate-pulse hidden last:table-row border-b dark:bg-gray-900 dark:border-gray-700"
+                contact-id="1"
+              >
+                <td class="px-6 py-4">
+                  <div
+                    class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"
+                  ></div>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex items-center w-full space-x-2">
+                    <div
+                      class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"
+                    ></div>
+                    <div
+                      class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"
+                    ></div>
+                    <div
+                      class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"
+                    ></div>
+                  </div>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex items-center w-full space-x-2 max-w-[480px]">
+                    <div
+                      class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"
+                    ></div>
+                    <div
+                      class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"
+                    ></div>
+                    <div
+                      class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"
+                    ></div>
+                  </div>
+                </td>
+                <td class="px-6 py-4">
+                  <div
+                    class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"
+                  ></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
     <script type="module" src="./main.js"></script>
