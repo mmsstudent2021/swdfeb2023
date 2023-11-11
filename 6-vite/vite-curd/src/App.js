@@ -2,8 +2,9 @@ import {
   contactCreateFormHandler,
   fetchContact,
   rowsHandlers,
+  updateContactFormHandler,
 } from "./app/contact";
-import { createContactForm, rows } from "./core/selectors";
+import { createContactForm, rows, updateContactForm } from "./core/selectors";
 
 class App {
   initialRender() {
@@ -12,6 +13,7 @@ class App {
   listener() {
     createContactForm.addEventListener("submit", contactCreateFormHandler);
     rows.addEventListener("click", rowsHandlers);
+    updateContactForm.addEventListener("submit", updateContactFormHandler);
   }
   init() {
     console.log("App is starting");
